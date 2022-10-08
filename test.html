@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Расписания учебных занятий</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/bitrix/templates/mstu/css/bootstrap.min.css">
+<link rel="stylesheet" href="/bitrix/templates/mstu/css/bootstrap.offcanvas.min.css">
+<link rel="stylesheet" href="/bitrix/templates/mstu/css/bvi.min.css">
+<link rel="stylesheet" href="/bitrix/templates/mstu/css/mstu.css">
+ 
+
+<!--[if (lte IE 9)]>
+<link rel="stylesheet" href="/bitrix/templates/mstu/css/normalize.css">
+<script type="text/javascript" src="/bitrix/templates/mstu/js/html5shiv.js?15051431792730"></script>
+<script type="text/javascript" src="/bitrix/templates/mstu/js/respond.min.js?15051433144377"></script>
+<![endif]-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="keywords" content="МГТУ, МВИМУ, МГАРФ, университет, высшая мореходка, студенты, обучение, образование, Мурманск, Мурманская область, Мурманский регион, MSTU, Murmansk State Technical University" />
+<meta name="description" content="Официальный сайт Мурманского государственного технического университета. Крупнейшее высшее учебное заведение Мурманской области. Основан в 1950 году как Мурманское высшее мореходное училище." />
+<script type="text/javascript" data-skip-moving="true">(function(w, d) {var v = w.frameCacheVars = {'CACHE_MODE':'HTMLCACHE','storageBlocks':[],'dynamicBlocks':{'LkGdQn':'291356b25bb1','XEVOpk':'09202f602d4a'},'AUTO_UPDATE':true,'AUTO_UPDATE_TTL':'120','version':'2'};var inv = false;if (v.AUTO_UPDATE === false){if (v.AUTO_UPDATE_TTL && v.AUTO_UPDATE_TTL > 0){var lm = Date.parse(d.lastModified);if (!isNaN(lm)){var td = new Date().getTime();if ((lm + v.AUTO_UPDATE_TTL * 1000) >= td){w.frameRequestStart = false;w.preventAutoUpdate = true;return;}inv = true;}}else{w.frameRequestStart = false;w.preventAutoUpdate = true;return;}}var r = w.XMLHttpRequest ? new XMLHttpRequest() : (w.ActiveXObject ? new w.ActiveXObject("Microsoft.XMLHTTP") : null);if (!r) { return; }w.frameRequestStart = true;var m = v.CACHE_MODE; var l = w.location; var x = new Date().getTime();var q = "?bxrand=" + x + (l.search.length > 0 ? "&" + l.search.substring(1) : "");var u = l.protocol + "//" + l.host + l.pathname + q;r.open("GET", u, true);r.setRequestHeader("BX-ACTION-TYPE", "get_dynamic");r.setRequestHeader("X-Bitrix-Composite", "get_dynamic");r.setRequestHeader("BX-CACHE-MODE", m);r.setRequestHeader("BX-CACHE-BLOCKS", v.dynamicBlocks ? JSON.stringify(v.dynamicBlocks) : "");if (inv){r.setRequestHeader("BX-INVALIDATE-CACHE", "Y");}try { r.setRequestHeader("BX-REF", d.referrer || "");} catch(e) {}if (m === "APPCACHE"){r.setRequestHeader("BX-APPCACHE-PARAMS", JSON.stringify(v.PARAMS));r.setRequestHeader("BX-APPCACHE-URL", v.PAGE_URL ? v.PAGE_URL : "");}r.onreadystatechange = function() {if (r.readyState != 4) { return; }var a = r.getResponseHeader("BX-RAND");var b = w.BX && w.BX.frameCache ? w.BX.frameCache : false;if (a != x || !((r.status >= 200 && r.status < 300) || r.status === 304 || r.status === 1223 || r.status === 0)){var f = {error:true, reason:a!=x?"bad_rand":"bad_status", url:u, xhr:r, status:r.status};if (w.BX && w.BX.ready && b){BX.ready(function() {setTimeout(function(){BX.onCustomEvent("onFrameDataRequestFail", [f]);}, 0);});}w.frameRequestFail = f;return;}if (b){b.onFrameDataReceived(r.responseText);if (!w.frameUpdateInvoked){b.update(false);}w.frameUpdateInvoked = true;}else{w.frameDataString = r.responseText;}};r.send();var p = w.performance;if (p && p.addEventListener && p.getEntries && p.setResourceTimingBufferSize){var e = 'resourcetimingbufferfull';var h = function() {if (w.BX && w.BX.frameCache && w.BX.frameCache.frameDataInserted){p.removeEventListener(e, h);}else {p.setResourceTimingBufferSize(p.getEntries().length + 50);}};p.addEventListener(e, h);}})(window, document);</script>
+
+
+<link href="/bitrix/templates/mstu/components/bitrix/breadcrumb/breadcrumb/style.css?1502097049464" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="/bitrix/templates/mstu/js/fancybox/jquery.fancybox.css?14761672504760" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="/bitrix/templates/mstu/js/owl-carousel/owl.carousel.css?15066946724028" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="/bitrix/components/simai/feedback.error/templates/.default/style.css?15210097074107" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<script type="text/javascript">if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+<script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+
+<script type="text/javascript" src="/bitrix/js/main/core/core.js?1658483816478527"></script>
+
+<script>BX.setJSList(['/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/core/core_promise.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/loadext/loadext.js','/bitrix/js/main/loadext/extension.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/includes/js/includes.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/ui/polyfill/closest/js/closest.js','/bitrix/js/main/polyfill/fill/main.polyfill.fill.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/core/core.js','/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js','/bitrix/js/main/lazyload/dist/lazyload.bundle.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/parambag/dist/parambag.bundle.js']);
+BX.setCSSList(['/bitrix/js/main/lazyload/dist/lazyload.bundle.css','/bitrix/js/main/parambag/dist/parambag.bundle.css']);</script>
+<script type="text/javascript">(window.BX||top.BX).message({'pull_server_enabled':'N','pull_config_timestamp':'0','pull_guest_mode':'N','pull_guest_user_id':'0'});(window.BX||top.BX).message({'PULL_OLD_REVISION':'Для продолжения корректной работы с сайтом необходимо перезагрузить страницу.'});</script>
+<script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','UTF_MODE':'N','SITE_ID':'sz','SITE_DIR':'/'});</script>
+
+
+<script type="text/javascript" src="/bitrix/js/ui/dexie/dist/dexie3.bundle.js?1663318151188902"></script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_ls.js?144129162910430"></script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_fx.js?149217663816888"></script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_frame_cache.js?165187679517069"></script>
+<script type="text/javascript" src="/bitrix/js/pull/protobuf/protobuf.js?1643235471274055"></script>
+<script type="text/javascript" src="/bitrix/js/pull/protobuf/model.js?164323547170928"></script>
+<script type="text/javascript" src="/bitrix/js/rest/client/rest.client.js?164323565317414"></script>
+<script type="text/javascript" src="/bitrix/js/pull/client/pull.client.js?166331792771092"></script>
+<script type="text/javascript">
+					(function () {
+						"use strict";
+
+						var counter = function ()
+						{
+							var cookie = (function (name) {
+								var parts = ("; " + document.cookie).split("; " + name + "=");
+								if (parts.length == 2) {
+									try {return JSON.parse(decodeURIComponent(parts.pop().split(";").shift()));}
+									catch (e) {}
+								}
+							})("BITRIX_CONVERSION_CONTEXT_sz");
+
+							if (cookie && cookie.EXPIRE >= BX.message("SERVER_TIME"))
+								return;
+
+							var request = new XMLHttpRequest();
+							request.open("POST", "/bitrix/tools/conversion/ajax_counter.php", true);
+							request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+							request.send(
+								"SITE_ID="+encodeURIComponent("sz")+
+								"&sessid="+encodeURIComponent(BX.bitrix_sessid())+
+								"&HTTP_REFERER="+encodeURIComponent(document.referrer)
+							);
+						};
+
+						if (window.frameRequestStart === true)
+							BX.addCustomEvent("onFrameDataReceived", counter);
+						else
+							BX.ready(counter);
+					})();
+				</script>
+<!-- dev2fun module opengraph -->
+<meta property="og:title" content="Расписания учебных занятий"/>
+<meta property="og:description" content="Официальный сайт Мурманского государственного технического университета. Крупнейшее высшее учебное заведение Мурманской области. Основан в 1950 году как Мурманс..."/>
+<meta property="og:url" content="https://www.mstu.edu.ru/study/timetable/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Мурманский государственный технический университет"/>
+<!-- /dev2fun module opengraph -->
+
+
+
+<script type="text/javascript" src="/bitrix/templates/mstu/js/jquery-1.12.3.min.js?150210246597180"></script>
+<script type="text/javascript" src="/bitrix/templates/mstu/js/bootstrap.min.js?150210247637045"></script>
+<script type="text/javascript" src="/bitrix/templates/mstu/js/fancybox/jquery.fancybox.pack.js?165504840123140"></script>
+<script type="text/javascript" src="/bitrix/templates/mstu/js/owl-carousel/owl.carousel.js?150669467285368"></script>
+<script type="text/javascript" src="/bitrix/templates/mstu/js/bvi/bvi.min.js?163973186037826"></script>
+<script type="text/javascript" src="/bitrix/templates/mstu/js/mstu.js?16568579488097"></script>
+<script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "0da1022e43cc11f16f7d8fb0a2137432"]); _ba.push(["host", "www.mstu.edu.ru"]); (function() {var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true;ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ba, s);})();</script>
+
+
+
+<link rel="icon" href="/bitrix/templates/mstu/favicon.ico" type="image/x-icon" /> 
+<link rel="shortcut icon" href="/bitrix/templates/mstu/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="180x180" href="//www.mstu.edu.ru/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//www.mstu.edu.ru/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//www.mstu.edu.ru/favicon-16x16.png">
+<link rel="manifest" href="//www.mstu.edu.ru/manifest.json">
+</head>
+
+<body>
+ 
+
+<div id="panel"></div>
+
+ 
+
+
+<div class="s-blue" id="header-top">
+  <div class="container">
+    <div class="row">
+
+<div class="col-md-7 hidden-sm hidden-xs">
+<ul class="nav navbar-nav navbar-left">
+<li class="text-logo"><a href="//www.mstu.edu.ru">Мурманский государственный технический университет</a></li>
+ 
+</ul>
+</div>
+
+<div class="visible-xs visible-sm col-sm-4 col-xs-4">
+<ul class="nav navbar-nav navbar-left">
+  <li class="text-logo"><a href="//www.mstu.edu.ru">МГТУ</a></li>
+</ul>
+</div>
+
+  <div class="col-md-5 col-sm-8 col-xs-8">
+    <ul class="nav navbar-nav navbar-right">
+
+      <li class="mr10 hidden-xs hidden-sm" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Версия для слабовидящих"><a href="#" data-aa-on="" class="bvi-open" itemprop="Copy"><span class="icons-2 i-spec"></span></a></li>
+      <li class="mr10" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="English version"><a href="http://eng.mstu.edu.ru/">Eng</a></li>
+      <li class="mr10" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Телефоны подразделений"><a href="//www.mstu.edu.ru/structure/phones/"><span class="icons-2 i-phone"></span></a></li>
+      <li data-toggle="tooltip" data-placement="bottom" title="Сервисы"><a href="//www.mstu.edu.ru/services/"><span class="icons-2 i-service"></span></a>
+
+    <li data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Поиск"><a href="#" id="search-button" type="button" data-toggle="modal" data-target=".search-modal"><span class="icons-2 i-search"></span></a></li>
+            <li class="hidden-md hidden-lg"><a onclick="openNav()"><!-- data-toggle="mainmenu" -->
+            <button class="navbar-toggle"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </a></li>
+    </ul>
+
+    <div class="modal fade search-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"><div class="modal-dialog modal-lg"><div class="modal-content">
+
+    <div class="modal-body">
+      <form class="" role="search" method="get" action="//www.mstu.edu.ru/search/"><div class="input-group">
+      <input type="text" class="form-control form-search" name="q" placeholder="Текст для поиска">
+      <span class="input-group-btn"><button class="btn btn-default" type="submit">Искать</button></span>
+    </div></form>
+  </div></div></div></div>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<div class="s-blue" id="header-nav">
+  <div class="container">
+
+<div id="bxdynamic_LkGdQn_start" style="display:none"></div><ul class="mainmenu">     
+
+        
+          <li><a href="http://abit.mstu.edu.ru" class="menu-select">Поступающим</a></li>
+                   
+                   <li><span class="sub-arrow glyphicon glyphicon-menu-down" role="button" data-toggle="collapse" href="#menu-info" aria-expanded="false" aria-controls="menu-info"></span><a href="/info/">Университет</a>
+       <div class="sub-menu collapse" id="menu-info"><ul>
+                         
+          <li><a href="/sveden/" class="menu-select">Сведения об образовательной организации</a></li>
+                   
+          <li><a href="/info/">Об университете</a></li>
+                   
+          <li><a href="/info/head/">Руководство МГТУ</a></li>
+                   
+          <li><a href="/info/supervisory/">Наблюдательный совет</a></li>
+                   
+          <li><a href="/info/sovet/sostav/">Ученый совет</a></li>
+                   
+          <li><a href="/info/board/">Попечительский совет</a></li>
+                   
+          <li><a href="/info/license/">Лицензия и аккредитация</a></li>
+                   
+          <li><a href="/info/inter/news/">Международное сотрудничество</a></li>
+                   
+          <li><a href="/info/association/">Студенческие объединения</a></li>
+                   
+          <li><a href="/info/history/">История МГТУ</a></li>
+                   
+          <li><a href="/sveden/ovz/">Доступная среда</a></li>
+                   
+          <li><a href="/press/vacancies/">Конкурсы и выборы</a></li>
+                   
+          <li><a href="/info/vacancies/">Вакансии</a></li>
+                   
+          <li><a href="/info/docs/">Документы</a></li>
+                   
+          <li><a href="/info/address/">Реквизиты МГТУ</a></li>
+                   
+       	</ul></div></li>
+                   <li><span class="sub-arrow glyphicon glyphicon-menu-down" role="button" data-toggle="collapse" href="#menu-struct" aria-expanded="false" aria-controls="menu-struct"></span><a href="/structure/">Структура</a>
+       <div class="sub-menu collapse" id="menu-struct"><ul>
+                         
+          <li><a href="/structure/insts/">Институты</a></li>
+                   
+          <li><a href="http://fpkvk.mstu.edu.ru/">Факультет подготовки кадров высшей квалификации</a></li>
+                   
+          <li><a href="/structure/branches/">Филиалы и колледжи</a></li>
+                   
+          <li><a href="/structure/kafs/">Кафедры</a></li>
+                   
+          <li><a href="/structure/deps/">Управления</a></li>
+                   
+          <li><a href="/structure/centers/">Центры</a></li>
+                   
+          <li><a href="/structure/labs/">Научно-исследовательские лаборатории</a></li>
+                   
+          <li><a href="/structure/divs/">Отделы и службы</a></li>
+                   
+          <li><a href="/structure/phones/" class="menu-select">Список телефонов</a></li>
+                   
+       	</ul></div></li>
+                   <li><span class="sub-arrow glyphicon glyphicon-menu-down" role="button" data-toggle="collapse" href="#menu-education" aria-expanded="false" aria-controls="menu-education"></span><a href="/education/">Образование</a>
+       <div class="sub-menu collapse" id="menu-education"><ul>
+                         
+          <li><a href="/structure/centers/cdpop/units/odp/">Довузовская подготовка</a></li>
+                   
+          <li><a href="/education/high/">Высшее образование</a></li>
+                   
+          <li><a href="/education/spo/">Среднее профессиональное</a></li>
+                   
+          <li><a href="/education/marine/">Морское образование</a></li>
+                   
+          <li><a href="/education/retraining/">Дополнительное профессиональное образование и профессиональное обучение</a></li>
+                   
+       	</ul></div></li>
+                   <li><span class="sub-arrow glyphicon glyphicon-menu-down" role="button" data-toggle="collapse" href="#menu-science" aria-expanded="false" aria-controls="menu-science"></span><a href="/science/">Наука</a>
+       <div class="sub-menu collapse" id="menu-science"><ul>
+                         
+          <li><a href="/science/news/">Новости</a></li>
+                   
+          <li><a href="/science/docs/">Документы</a></li>
+                   
+          <li><a href="/structure/faculties/fpkvk/">Аспирантура (ФПКВК)</a></li>
+                   
+          <li><a href="/science/centers/">Центры, лаборатории, научные школы</a></li>
+                   
+          <li><a href="/science/nts/">Научно-технический совет</a></li>
+                   
+          <li><a href="/science/smu/">Совет молодых ученых</a></li>
+                   
+          <li><a href="/info/association/scinorth/">Студенческое научное сообщество</a></li>
+                   
+          <li><a href="/science/research/">Направления научных исследований</a></li>
+                   
+          <li><a href="/science/research/gbnir/">Тематический план НИР</a></li>
+                   
+          <li><a href="/science/innovation/">Инновационная деятельность</a></li>
+                   
+          <li><a href="/science/grants/">Программы, конкурсы, гранты</a></li>
+                   
+          <li><a href="/science/actions/">Календарь научных мероприятий</a></li>
+                   
+          <li><a href="/science/results/">Результаты научной деятельности</a></li>
+                   
+          <li><a href="/science/help/">В помощь исследователю</a></li>
+                   
+          <li><a href="http://vestnik.mstu.edu.ru/">Вестник МГТУ</a></li>
+                   
+          <li><a href="http://izvestiya.mstu.edu.ru/">Известия вузов. Арктический регион</a></li>
+                   
+       	</ul></div></li>
+                   <li><span class="sub-arrow glyphicon glyphicon-menu-down" role="button" data-toggle="collapse" href="#menu-study" aria-expanded="false" aria-controls="menu-study"></span><a href="/study/">Студенту</a>
+       <div class="sub-menu collapse" id="menu-study"><ul>
+                         
+          <li><a href="/study/timetable/">Расписание занятий</a></li>
+                   
+          <li><a href="/structure/divs/studof/">Студенческий офис</a></li>
+                   
+          <li><a href="/study/prices/">Стоимость обучения</a></li>
+                   
+          <li><a href="/services/eios/">Электронная образовательная среда</a></li>
+                   
+          <li><a href="/study/materials/">Учебные материалы</a></li>
+                   
+          <li><a href="/study/grants/">Международные конкурсы и гранты</a></li>
+                   
+          <li><a href="/study/stip/">Стипендиальное обеспечение</a></li>
+                   
+          <li><a href="http://job.mstu.edu.ru/">Трудоустройство</a></li>
+                   
+          <li><a href="/press/sport/">Спортивная жизнь</a></li>
+                   
+          <li><a href="/info/association/">Студенческие объединения</a></li>
+                   
+          <li><a href="http://konkurs.mstu.edu.ru/">Мероприятия и конкурсы</a></li>
+                   
+       	</ul></div></li>
+                   <li><span class="sub-arrow glyphicon glyphicon-menu-down" role="button" data-toggle="collapse" href="#menu-press" aria-expanded="false" aria-controls="menu-press"></span><a href="/press/">Пресс-центр</a>
+       <div class="sub-menu collapse" id="menu-press"><ul>
+                         
+          <li><a href="/press/news/">Архив новостей</a></li>
+                   
+          <li><a href="/press/ads/">Объявления</a></li>
+                   
+          <li><a href="/press/case-champ/">Всероссийский кейс-чемпионат школьников</a></li>
+                   
+          <li><a href="/press/step/">Шагаем в кругосветку</a></li>
+                   
+          <li><a href="/press/victory/">Истории нашей Победы</a></li>
+                   
+          <li><a href="/press/coronavirus/" class="menu-select">Осторожно: коронавирус</a></li>
+                   
+          <li><a href="/press/smi/">СМИ о нас</a></li>
+                   
+          <li><a href="/structure/centers/cvkm/units/press/">Пресс-служба</a></li>
+                   
+       	</ul></div></li>
+                   <li><a href="/antiterror/">Антитеррор</a></li>
+                                                             </ul>
+<div id="bxdynamic_LkGdQn_end" style="display:none"></div>
+ 
+
+  </div>
+</div>
+
+<div class="header-breadcrumb hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+  <ol class="breadcrumb"><li ><a href="/" title="Главная">Главная</a></li><li ><a href="/study/" title="Студенту">Студенту</a></li></ol>      </div>
+
+  
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+  <h1>Расписания учебных занятий</h1>
+
+
+<div id="bxdynamic_XEVOpk_start" style="display:none"></div>
+
+<div class="hidden-print" id="navblock">
+<ul id="col_1">
+
+
+      <li><a href="http://aspir.mstu.edu.ru/timetable/">Факультет подготовки кадров высшей квалификации</a></li>
+      
+      <li><a href="http://af.mstu.edu.ru/study/timetable/">Апатитский филиал</a></li>
+      
+      <li><a href="/structure/branches/mmrc/timetable/">Мурманский морской рыбопромышленный колледж</a></li>
+      </ul>
+<ul id="col_2">
+  
+      <li><a href="/study/timetable/graph/">График учебных занятий</a></li>
+      
+      <li><a href="/study/timetable/docs/">Документы по учебному процессу</a></li>
+      
+</ul>
+</div>
+
+<div id="bxdynamic_XEVOpk_end" style="display:none"></div>
+
+<link rel="stylesheet" type="text/css" href="css/tabs.css"><div class="row"><div class="col-md-12"><p class="text-right"><small>Дата обновления: 2022-10-07 16:17:47</small></p></div></div><div class="rasp"><ul id="tabs-ul" class="nav nav-pills nav-justified" role="tablist"><li id="li1" role="presentation" class="active on"><a class="tab" href="#dd1" aria-controls="home" role="tab" data-toggle="tab">По группам</a></li><li id="li2" role="presentation"><a class="tab" href="#dd2" aria-controls="profile" role="tab" data-toggle="tab">По преподавателям</a></li><li id="li3" role="presentation"><a class="tab" href="#dd3" aria-controls="messages" role="tab" data-toggle="tab">По аудиториям</a></li></ul><div class="tab-content"><div id="dd1" role="tabpanel" class="tab-pane active"><form action="/study/timetable/" method="post"><p><input type="hidden" name="mode" value="1"><select name="pers" size="1" onchange="if (this.selectedIndex) this.form.submit ()"><option value=0>Выберите период</option><option value=207>19.09.2022-25.09.2022 (ч/н)</option><option value=208>26.09.2022-02.10.2022 (н/н)</option><option value=209 selected>03.10.2022-09.10.2022 (ч/н)</option><option value=210>10.10.2022-16.10.2022 (н/н)</option><option value=211>17.10.2022-23.10.2022 (ч/н)</option><option value=212>24.10.2022-30.10.2022 (н/н)</option></select><select name="facs" size="1"><option value=0>Институт</option><option value=1>ЕТИ</option><option value=2>ИМА</option><option value=3>АФ</option><option value=4 selected>ИАТ</option></select>        <select name="courses" size="1"><option value=0>Курс</option><option selected value=1>1 курс</option><option value=2>2 курс</option><option value=3>3 курс</option><option value=4>4 курс</option><option value=5>5 курс</option><option value=6>6 курс</option><option value=7>7 курс</option></select>        <button class="btn btn-default" type="submit">Показать</button></p></form></div><div id="dd2" role="tabpanel" class="tab-pane"><div class="row"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><div class="input-group"><form action="index.php" method="post"><input type="hidden" name="mode2" value="1"><select name="pers2" size="1" onchange="if (this.selectedIndex) this.form.submit ()"><option>Выберите период</option><option value=207>19.09.2022-25.09.2022 (ч/н)</option><option value=208>26.09.2022-02.10.2022 (н/н)</option><option value=209>03.10.2022-09.10.2022 (ч/н)</option><option value=210>10.10.2022-16.10.2022 (н/н)</option><option value=211 selected>17.10.2022-23.10.2022 (ч/н)</option><option value=212>24.10.2022-30.10.2022 (н/н)</option></select></div></div><div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><div class="input-group"><input name="tab" type="hidden" value="2"><input name="sstring" type="text" value="Бурзун" class="form-control" placeholder="Введите ФИО преподавателя полностью или частично"><span class="input-group-btn"><button class="btn btn-default" type="submit">Показать</button></span></div></div></div></form></div><div id="dd3" role="tabpanel" class="tab-pane"><form action="index.php" method="post"><input name="tab" type="hidden" value="3"><input type="hidden" name="mode3" value="1"><p><select name="pers3" size="1" onchange="if (this.selectedIndex) this.form.submit ()"><option>Выберите период</option><option value=207>19.09.2022-25.09.2022 (ч/н)</option><option value=208>26.09.2022-02.10.2022 (н/н)</option><option value=209 selected>03.10.2022-09.10.2022 (ч/н)</option><option value=210>10.10.2022-16.10.2022 (н/н)</option><option value=211>17.10.2022-23.10.2022 (ч/н)</option><option value=212>24.10.2022-30.10.2022 (н/н)</option></select><select name="buis" size="1"><option value=1>Выберите корпус</option><option value=1></option><option value=2>-</option><option value=3>Апатитский филиал</option><option value=4>Корпус А</option><option value=5>Корпус В</option><option value=6>Корпус Е</option><option value=7>Корпус КСК</option><option value=8>Корпус Л</option><option value=9>Корпус М</option><option value=10>Корпус Н</option><option value=11>Корпус П</option><option selected value=12>Корпус С</option><option value=13>Корпус Э</option></select><button class="btn btn-default" type="submit">Показать</button></p></form></div></div></div><hr class='hidden-xs hidden-print'><div class="alert alert-danger"> <strong>Сокращения и обозначения:<br>Самостоятельная работа - сам.работа<br>Дистанционное обучение - дист.обуч.<br></strong></div><div class="alert alert-info"> <strong>Ваши замечания и предложения по содержательной части расписаний просьба отправлять в Управление образования (см. телефонный справочник).<br>Ваши замечания и предложения по техническим вопросам отображения расписаний на сайте можно отправлять через <a href="/structure/deps/uit/feedback/">форму обратной связи</a>.</strong></div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+	  <p><img src="/bitrix/templates/mstu/img/logo-bottom.png" title="МГТУ"></p>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <p>183010, Мурманск, ул. Спортивная, 13</p>
+      <p>Тел./факс: (8152) 40-32-01/40-35-56
+      <br><a href="mailto:office@mstu.edu.ru">office@mstu.edu.ru</a></p>
+      <a href="https://www.mstu.edu.ru/structure/phones/">Телефоны</a> | <a href="https://www.mstu.edu.ru/img/map.png" class="imgshow"><span class="dotted">Карта корпусов</span></a></p>
+    </div>
+    <div class="col-xs-12 col-md-4">
+	<div class="row mb20">
+	<div class="col-md-12">
+		<a href="https://vk.com/mstumurmansk" target="_blank"><span class="icons-2 i-vk-2 mr10"></span></a>
+		<a href="https://t.me/mstumurmansk" target="_blank"><span class="icons-2 i-tg-2 mr10"></span></a>
+		<a href="https://www.youtube.com/mstu51" target="_blank"><span class="icons-2 i-youtu-2 mr10"></span></a>
+<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(21958720, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/21958720" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click;mstu' "+
+"target=_blank><img src='//counter.yadro.ru/hit;mstu?t14.11;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+	</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<p class="hidden-xs">Нашли ошибку?<br>Выделите фрагмент текста и нажмите Ctrl+Enter</p>
+		</div>
+	</div>
+    </div>
+  </div>
+  </div>
+</footer>
+
+
+
+<!-- MODAL WINDOW -->
+ <div class="modal-window-home" id="modal-window-home-id" params="close" onload="text">
+	<form method="POST" name="helpForm">
+<!-- CONTENT MODAL -->
+		<div class="content-modal-window">
+<!-- HEADER -->
+			<div class="header-modal-window">
+				<span class="header-modal-window-text">На сайте обнаружена ошибка</span>
+				<div class="close-icon-button-block over-mask">
+					<div class='over-mask but-close-over-mask' params="close"></div>
+					<svg width="18" height="18" viewBox="0 0 512 512">
+						<line x1="5" y1="5" x2="510" y2="510" stroke="#000000" stroke-width="20"/>
+						<line x1="5" y1="510" x2="510" y2="5" stroke="#000000" stroke-width="20"/>
+					</svg>
+				</div>
+			</div>
+<!-- CONTENT BLOCK -->
+			<div class="content-modal-window-message-submit">
+				<div id="mess" class="text-error"></div>
+				<div id='elem-form'></div>
+			</div>
+<!-- FOOTER -->
+			<div class="footer-modal-window">
+				<input type="submit" value="Отправить"  id='send'
+					class="but-sm but-sm-submit btn-button-modal-window m-20">
+			</div>
+		</div>
+	</form>
+</div>
+
+
+<script>
+ 
+		function bodyEvent(func)
+		{
+			var codes = [].slice.call(arguments, 1);
+			var pressed = {};
+			
+			document.onkeydown = function(e) {
+			  e = e || window.event;
+
+			  pressed[e.keyCode] = true;
+
+			  for (var i = 0; i < codes.length; i++) { // проверить, все ли клавиши нажаты
+				if (!pressed[codes[i]]) {
+				  return;
+				}
+			  }
+
+			  pressed = {};
+
+			  func();
+
+			};
+
+			document.onkeyup = function(e)
+			{
+			  e = e || window.event;
+
+			  delete pressed[e.keyCode];
+			};
+		}
+		
+		
+		function closeModalWindow()
+		{
+			var modalWin = document.getElementById("modal-window-home-id");
+			modalWin.style.display = "none";
+			//modalWin.parentNode.removeChild(modalWin);
+		}
+		
+		
+		function modalWindow()
+		{
+			var modalW = document.getElementsByClassName("modal-window-home").length;
+			if(modalW <= 1)
+			{	
+				var formElem = document.getElementById('elem-form');
+				var elemStr = '<textarea class="form-sm-element message-text-submit" id="text-form" name="error_desc"' +
+					'placeholder="Пожалуйста, опишите ошибку"></textarea>' +
+						'<input type="hidden" name="error_message" value="' + copySelectionText() + '">' +
+						'<input type="hidden" name="error_url" value="' + window.location + '">' +
+						'<input type="hidden" name="error_referer" value="' + document.referrer + '">' +
+						'<input type="hidden" name="error_useragent" value="' + navigator.userAgent + '">';
+				formElem.innerHTML = elemStr;
+
+				var modalFormMess = document.getElementById('mess');
+				var hideFormText = document.getElementById('error_message');
+				var submitButton = document.getElementById('send');
+				var textForm = document.getElementById('text-form');
+				console.log(String(textForm));
+
+				var hideText = copySelectionText();
+				if(hideText != '') {
+					var str = '';
+					if(String(hideText).length >= 120)
+						str = '...';
+					modalFormMess.innerHTML = String(hideText).substring(0,120) + str;
+					submitButton.style.display = 'block';
+					textForm.style.display = 'block';
+					modalFormMess.style.color = 'rgba(204,85,119,1)';
+				}
+				else {
+					modalFormMess.innerHTML = 'Текст с ошибкой не выделен. Пожалуйста выделите текст с ошибкой и нажмите Ctrl+Enter';
+					textForm.style.display = 'none';				
+					submitButton.style.display = 'none';
+					modalFormMess.style.color = 'rgba(255,0,0,.87)';				
+				}
+				var modWindow = document.getElementById("modal-window-home-id");
+				modWindow.style.display = "flex";
+			}
+		}
+		
+		
+		bodyEvent(modalWindow,"17","13");
+		
+
+		
+		function modalWindowEsc(e)
+		{
+			if(e.keyCode == 27)
+				closeModalWindow();
+		}	
+
+		addEventListener("keydown", modalWindowEsc);
+
+
+
+		function handlerEvents(e) {
+			var flagObjHandler = e.target.hasAttribute('params');
+			if(flagObjHandler) {
+				var objHandler = e.target.getAttribute('params');
+				switch(objHandler) {
+					case 'close':
+						closeModalWindow();
+						break;
+				}
+			}
+		}
+
+
+
+
+		window.onload = function() {
+			document.body.addEventListener('click',handlerEvents);
+		}
+
+		function copySelectionText()
+		{
+			if(window.getSelection)
+				strText = window.getSelection();
+			else if(document.getSelection)
+				strText = document.getSelection();
+			else if(document.selection)
+				strText = document.CDATA_SECTION_NODE.createRange().text;
+			else return;
+
+			return strText;
+		}
+
+		function text() {
+			
+		}
+</script> 
+
+
+<!-- Citycard Widget -->
+<div id='citycard-payment-widget'></div>
+<script type='text/javascript' src='//citycard.ru/w/js/widget.js'></script>
+<script type='text/javascript'>
+ Citycard.init({ 
+  providerId: '90717271',
+  showContacts: true,
+  showReceipt: true,
+  type: 'button',
+  buttonText: 'Оплатить онлайн',
+  customCSS: null, // или путь к вашему файлу CSS,
+  referenceId: 'b8c206dd-3b53-4b92-b18b-024027c14342'
+ });
+</script>
+</body>
+</html><!--636ca361421c806e82c9b8e23d60e537-->
